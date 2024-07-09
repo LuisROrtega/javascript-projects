@@ -1,0 +1,52 @@
+@import url('features.css');
+
+body { /* Centrando usando flexbox */
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Horizontalmente */
+    align-items: center; /* Verticalmente */
+    height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,111,121,1) 32%, rgba(0,212,255,1) 100%);
+}
+
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 400px; /* Ajusta el ancho máximo del contenedor */
+    background: rgb(28,31,41);
+    background: radial-gradient(circle, rgba(28,31,41,1) 83%, rgba(0,0,0,1) 100%);
+    padding: 20px; /* Espaciado interno del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+.keys {
+    display: flex;
+    gap: 10px; /* Espacio entre las teclas */
+}
+
+.rows {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+    gap: 10px;
+    flex: 3;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.column-operator {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}

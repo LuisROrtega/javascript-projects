@@ -1,0 +1,72 @@
+#title {
+    color: white;
+    text-align: center;
+}
+
+.screen input {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 10px;
+}
+
+.screen input:focus {
+    color: white;
+    background-color: transparent;
+}
+
+.keys button {
+    flex: 1 1 calc(25% - 10px); /* Cada botón ocupa 25% menos el espacio del gap */
+    height: 50px;
+    font-size: 1rem;
+}
+
+.btn {
+    background-color: #443D3D;
+    color: white;
+    border: none;
+    border-radius: 2em;
+    flex: 1;
+}
+
+.btn:hover {
+    background-color: grey;
+}
+
+.btn:active {
+    transform: scale(0.95); /* Hace que el botón se encoja un poco al hacer clic */
+}
+
+.operator.btn-row {
+    font: bold 25px helvetica;
+    background-color: #8C8989;
+}
+
+.operator.btn-row:hover {
+    background-color: #636363;
+}
+
+.equal-operator.btn {
+    background-color: rgb(231, 129, 55);
+}
+
+.equal-operator.btn:hover {
+    background-color: rgb(218, 103, 15);
+}
+
+.btn-zero {
+    text-align: left;
+    flex: 2;
+}
+
+.operator {
+    border-radius: 2em;
+    background-color: rgb(231, 129, 55);
+}
+
+.operator:hover {
+    background-color: rgb(218, 103, 15);
+}
