@@ -19,10 +19,27 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (e.target.id === "ac") {
                 cadena = [];
                 input.value = "";
-            } else {
+            } else if (e.target.id === "de") {
+                if (input.value.length > 0) {
+                    input.value = input.value.slice(0, -1);
+                    cadena.pop();
+                }
+            } else if(e.target.id === ".") {
+                if (input.value == "") {
+                    console.dir(e.target);
+                    input.value = input.value + "0.";
+                    cadena.push(".");
+                } else if (input.value.length > 0) {
+                    input.value = input.value + ".";
+                    cadena.push(".");
+                }
+            }
+            else {
                 input.value = input.value + e.target.id;
                 cadena.push(e.target.id);
             }
         })
     })
+
+
 })
