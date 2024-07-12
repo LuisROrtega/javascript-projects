@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     const input = document.querySelector(".form-control");
     const button = document.querySelectorAll('button');
-    var cadena = [];
-    var string = "";
-    var result = null;
+    let cadena = [];
+    let string = "";
+    let result = null;
+
+    // Initialize the input with 0
+    input.value = "0";
 
     button.forEach((btn) => {
         btn.addEventListener('click', (e) => {
@@ -22,13 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             } else if (value === "ac") {
                 cadena = [];
-                input.value = "";
+                input.value = "0";
             } else if (value === "de") {
                 if (input.value.length > 0) {
                     input.value = input.value.slice(0, -1);
                     cadena.pop();
+                    if (input.value.length === 0) {
+                        input.value = "0";
+                    }
                 }
-            } else if(value === ".") {
+            } else if (value === ".") {
                 const currentInput = input.value;
                 const lastNumber = currentInput.split(/[\+\-\*\/]/).pop();
 
@@ -44,16 +50,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     const lastNumber = currentInput.split(/[\+\-\*\/]/).pop(); // remove last number 20
                     const percentageValue = parseFloat(lastNumber / 100);
 
-                   input.value = currentInput.slice(0, -lastNumber.length) + percentageValue;
-                   cadena.splice(-lastNumber.length, lastNumber.length, + percentageValue.toString());
+                    input.value = currentInput.slice(0, -lastNumber.length) + percentageValue;
+                    cadena.splice(-lastNumber.length, lastNumber.length, percentageValue.toString());
                 }
-            }   
-            else {
-                input.value = input.value + value;
-                cadena.push(value);
+            } else {
+                // If input is 0 and a number or operator is pressed, replace 0
+                if (input.value === "0" && !isNaN(value)) {
+                    input.value = value;
+                    cadena = [value];
+                } else {
+                    input.value = input.value + value;
+                    cadena.push(value);
+                }
             }
-        })
-    })
-
-
-})
+        });
+    });
+});
