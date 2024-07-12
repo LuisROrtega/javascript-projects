@@ -1,6 +1,8 @@
-#title {
-    color: white;
-    text-align: center;
+/* Estilos específicos para los botones */
+.keys button {
+    flex: 1 1 calc(33.333% - 10px); /* Cada botón ocupa 1/3 del ancho menos el espacio del gap */
+    height: 8vh;
+    font-size: 1.2em;
 }
 
 .screen input {
@@ -8,9 +10,10 @@
     background-color: transparent;
     color: white;
     border: none;
-    font-size: 1.5rem;
+    font-size: 3rem;
     text-align: right;
     padding: 10px;
+    margin: 1.5em 0em 1em 0em;
 }
 
 .screen input:focus {
@@ -18,17 +21,11 @@
     background-color: transparent;
 }
 
-.keys button {
-    flex: 1 1 calc(25% - 10px); /* Cada botón ocupa 25% menos el espacio del gap */
-    height: 50px;
-    font-size: 1rem;
-}
-
 .btn {
     background-color: #443D3D;
     color: white;
     border: none;
-    border-radius: 2em;
+    border-radius: 1em;
     flex: 1;
 }
 
@@ -37,7 +34,7 @@
 }
 
 .btn:active {
-    transform: scale(0.95); /* Hace que el botón se encoja un poco al hacer clic */
+    transform: scale(0.95); 
 }
 
 .operator.btn-row {
@@ -59,11 +56,11 @@
 
 .btn-zero {
     text-align: left;
-    flex: 2;
+    flex: 2; /* Ajusta el tamaño del botón 0 */
 }
 
 .operator {
-    border-radius: 2em;
+    border-radius: 1em;
     background-color: rgb(231, 129, 55);
 }
 
