@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     var string = "";
     var result = null;
 
-    var regexPoint = /\d+./; // boolean regexp
-
     button.forEach((btn) => {
         btn.addEventListener('click', (e) => {
             const value = e.target.id;
